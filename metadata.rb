@@ -1,12 +1,16 @@
-maintainer       'Gabor Szelcsanyi'
-maintainer_email 'szelcsanyi.gabor@gmail.com'
-license          'MIT'
+name             'mongodb'
+version          '1.0.3'
+maintainer       'Mohit Sethi'
+maintainer_email 'mohit@sethis.in'
+license          'Apache'
 description      'Installs/Configures mongodb, multi instance support'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-name             'L7-mongo'
-version          '1.0.2'
-source_url       'https://github.com/szelcsanyi/chef-mongo'
-issues_url       'https://github.com/szelcsanyi/chef-mongo/issues'
+source_url       'https://github.com/mohitsethi/chef-mongodb'
+issues_url       'https://github.com/mohitsethi/chef-mongodb/issues'
 
-supports 'ubuntu', '>= 12.04'
-supports 'debian', '>= 7.0'
+
+%w(ubuntu debian).each do |os|
+  supports os
+end
+
+depends 'runit'

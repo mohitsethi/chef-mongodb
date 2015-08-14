@@ -1,7 +1,5 @@
-# L7-mongo cookbook
-[![Build Status](https://travis-ci.org/szelcsanyi/chef-mongo.svg?branch=master)](https://travis-ci.org/szelcsanyi/chef-mongo)
-[![security](https://hakiri.io/github/szelcsanyi/chef-mongo/master.svg)](https://hakiri.io/github/szelcsanyi/chef-mongo/master)
-[![Cookbook Version](https://img.shields.io/cookbook/v/L7-mongo.svg?style=flat)](https://supermarket.chef.io/cookbooks/L7-mongo)
+# MongoDB cookbook
+
 
 ## Description
 
@@ -9,17 +7,19 @@ Configures [Mongodb](http://mongodb.org) via Opscode Chef
 
 It can handle multiple instances with different configuratioins and differend versions on the same machine.
 
+Please note that this cookbook does not use the 10gen apt repository, and instead downloads the required binaries from a given server.
+
 ## Supported Platforms
 
-* Ubuntu 12.04+
-* Debian 7.0+
+* Ubuntu
+* Debian
 
 ## Recipes
 
-* `L7-mongo` - The default no-op recipe.
+* `MongoDB` - The default no-op recipe.
 
 ## Providers
-* `L7_mongo_db` - Configures mongodb instance
+* `mongodb_db` - Configures mongodb instance
 
 ## Usage
 ###Provider parameters:
@@ -33,7 +33,7 @@ It can handle multiple instances with different configuratioins and differend ve
 
 #### A mongodb instance with custom parameters:
 ```ruby
-L7_mongo_db 'example' do
+mongodb_db 'example' do
     port '27017'
     bind_ip '0.0.0.0'
     default_instance true
@@ -51,9 +51,6 @@ Implement sharded cluster support.
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-## License
+## Authors
 
-* Freely distributable and licensed under the [MIT license](http://szelcsanyi.mit-license.org/2015/license.html).
-* Copyright (c) 2015 Gabor Szelcsanyi
-
-[![image](https://ga-beacon.appspot.com/UA-56493884-1/chef-mongo/README.md)](https://github.com/szelcsanyi/chef-mongo)
+* Mohit Sethi <mohit@sethis.in>
