@@ -5,9 +5,9 @@ maintainer_email 'mohit@sethis.in'
 license          'Apache'
 description      'Installs/Configures mongodb, multi instance support'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+
 source_url       'https://github.com/mohitsethi/chef-mongodb'
 issues_url       'https://github.com/mohitsethi/chef-mongodb/issues'
-
 
 %w(ubuntu debian).each do |os|
   supports os
