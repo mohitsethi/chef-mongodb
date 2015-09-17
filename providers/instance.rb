@@ -53,13 +53,13 @@ action :create do
 
   base = "#{new_resource.home}/mongodb-#{new_resource.name}"
 
-  group 'mongodb' do
+  group "#{new_resource.user}" do
     action :create
     system true
   end
 
-  user 'mongodb' do
-    gid 'mongodb'
+  user "#{new_resource.group}" do
+    gid "#{new_resource.group}"
     shell '/bin/false'
     home '/tmp'
     system true
@@ -70,8 +70,8 @@ action :create do
   end
 
   directory base do
-    owner 'root'
-    group 'root'
+    owner "#{new_resource.user}"
+    group "#{new_resource.group}"
     mode '0755'
     action :create
     recursive true
@@ -79,8 +79,8 @@ action :create do
 
   %w( etc data log var ).each do |dirname|
     directory "#{base}/#{dirname}" do
-      owner 'mongodb'
-      group 'mongodb'
+      owner "#{new_resource.user}"
+      group "#{new_resource.group}"
       mode '0750'
       action :create
       recursive false
@@ -89,9 +89,15 @@ action :create do
 
   t = template "#{base}/etc/mongodb.conf" do
     source 'etc/mongodb.conf.erb'
+<<<<<<< HEAD:providers/instance.rb
     cookbook 'MongoDB'
     owner 'root'
     group 'root'
+=======
+    cookbook 'L7-mongo'
+    owner "#{new_resource.user}"
+    group "#{new_resource.group}"
+>>>>>>> fd9e26a... make user, group parameterized thru LWRP:providers/db.rb
     mode '0644'
     variables(
       name: new_resource.name,
