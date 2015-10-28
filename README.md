@@ -35,6 +35,7 @@ Please note that this cookbook does not use the 10gen apt repository, and instea
 * `notablescan`: disables queries using fts (default true)
 * `rest`: enable rest interface for monitoring (default true)
 * `httpinterface`: enable http interface (default true)
+* `auth`: enable authentication (default false)
 
 #### A mongodb instance with custom parameters:
 ```ruby
