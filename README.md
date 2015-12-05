@@ -1,5 +1,6 @@
-# MongoDB cookbook
 
+# MongoDB cookbook
+Yet another Mongodb cookbook.
 
 ## Description
 

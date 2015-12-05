@@ -211,5 +211,5 @@ rm -f /tmp/mongodb-monitoring-status-#{new_resource.port}.tmp; fi"
       link_type :symbolic
     end
   end
-
+  
 end
