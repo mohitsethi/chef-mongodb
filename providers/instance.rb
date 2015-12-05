@@ -100,20 +100,20 @@ action :create do
 >>>>>>> fd9e26a... make user, group parameterized thru LWRP:providers/db.rb
     mode '0644'
     variables(
-      name: new_resource.name,
-      port: new_resource.port,
-      bind_ip: new_resource.bind_ip,
-      socket: base + '/var',
-      pidfile: base + '/var/mongodb.pid',
-      log: base + '/log/mongodb.log',
-      datadir: base + '/data',
-      replSet: new_resource.replSet,
-      notablescan: new_resource.notablescan,
-      smallfiles: new_resource.smallfiles,
-      journal: new_resource.journal,
-      rest: new_resource.rest,
-      httpinterface: new_resource.httpinterface,
-      auth: new_resource.auth
+      :name => new_resource.name,
+      :port => new_resource.port,
+      :bind_ip => new_resource.bind_ip,
+      :socket => base + '/var',
+      :pidfile => base + '/var/mongodb.pid',
+      :log => base + '/log/mongodb.log',
+      :datadir => base + '/data',
+      :replSet => new_resource.replSet,
+      :notablescan => new_resource.notablescan,
+      :smallfiles => new_resource.smallfiles,
+      :journal => new_resource.journal,
+      :rest => new_resource.rest,
+      :httpinterface => new_resource.httpinterface,
+      :auth => new_resource.auth
     )
   end
   new_resource.updated_by_last_action(t.updated_by_last_action?)
@@ -179,18 +179,18 @@ rm -f /tmp/mongodb-monitoring-status-#{new_resource.port}.tmp; fi"
     group 'root'
     mode '0755'
     variables(
-      daemon: "#{base}/current/bin/mongod",
-      datadir: "#{base}/data",
-      config: "#{base}/etc/mongodb.conf",
-      name: "mongodb-#{new_resource.name}",
-      pid: "#{base}/var/mongodb.pid"
+      :daemon => "#{base}/current/bin/mongod",
+      :datadir => "#{base}/data",
+      :config => "#{base}/etc/mongodb.conf",
+      :name => "mongodb-#{new_resource.name}",
+      :pid => "#{base}/var/mongodb.pid"
     )
   end
   new_resource.updated_by_last_action(t.updated_by_last_action?)
 
   service "mongodb-#{new_resource.name}" do
     action :enable
-    supports status: true, restart: true
+    supports :status => true, :restart => true
   end
 
   t = template "/etc/logrotate.d/mongodb-#{new_resource.name}-logs" do
@@ -200,7 +200,7 @@ rm -f /tmp/mongodb-monitoring-status-#{new_resource.port}.tmp; fi"
     group 'root'
     mode '0644'
     variables(
-      cpath: "#{base}/log"
+      :cpath => "#{base}/log"
     )
   end
   new_resource.updated_by_last_action(t.updated_by_last_action?)
@@ -211,5 +211,8 @@ rm -f /tmp/mongodb-monitoring-status-#{new_resource.port}.tmp; fi"
       link_type :symbolic
     end
   end
+<<<<<<< HEAD:providers/instance.rb
   
+=======
+>>>>>>> afd6c63... make rubocop happy:providers/db.rb
 end
