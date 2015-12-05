@@ -53,13 +53,13 @@ action :create do
 
   base = "#{new_resource.home}/mongodb-#{new_resource.name}"
 
-  group "#{new_resource.user}" do
+  group new_resource.user do
     action :create
     system true
   end
 
-  user "#{new_resource.group}" do
-    gid "#{new_resource.group}"
+  user new_resource.group do
+    gid new_resource.group
     shell '/bin/false'
     home '/tmp'
     system true
@@ -70,8 +70,8 @@ action :create do
   end
 
   directory base do
-    owner "#{new_resource.user}"
-    group "#{new_resource.group}"
+    owner new_resource.user
+    group new_resource.group
     mode '0755'
     action :create
     recursive true
@@ -79,8 +79,8 @@ action :create do
 
   %w( etc data log var ).each do |dirname|
     directory "#{base}/#{dirname}" do
-      owner "#{new_resource.user}"
-      group "#{new_resource.group}"
+      owner new_resource.user
+      group new_resource.group
       mode '0750'
       action :create
       recursive false
@@ -95,9 +95,14 @@ action :create do
     group 'root'
 =======
     cookbook 'L7-mongo'
+<<<<<<< HEAD:providers/instance.rb
     owner "#{new_resource.user}"
     group "#{new_resource.group}"
 >>>>>>> fd9e26a... make user, group parameterized thru LWRP:providers/db.rb
+=======
+    owner new_resource.user
+    group new_resource.group
+>>>>>>> 141164b... updated foodcritic config, fixed FC offences:providers/db.rb
     mode '0644'
     variables(
       :name => new_resource.name,
