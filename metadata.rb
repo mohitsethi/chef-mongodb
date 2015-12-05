@@ -5,9 +5,8 @@ maintainer_email 'mohit@sethis.in'
 license          'Apache'
 description      'Installs/Configures mongodb, multi instance support'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-<<<<<<< HEAD
 
-version          '1.0.8'
+version          '1.0.12'
 
 source_url       'https://github.com/mohitsethi/chef-mongodb'
 issues_url       'https://github.com/mohitsethi/chef-mongodb/issues'
