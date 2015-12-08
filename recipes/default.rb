@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: mongo
-# Provider:: db
+# Recipe:: default
 #
 # Copyright 2015, Mohit Sethi <mohit@sethis.in>
 #

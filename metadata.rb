@@ -6,7 +6,7 @@ license          'Apache'
 description      'Installs/Configures mongodb, multi instance support'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 
-version          '1.0.12'
+version          '1.0.13'
 
 source_url       'https://github.com/mohitsethi/chef-mongodb'
 issues_url       'https://github.com/mohitsethi/chef-mongodb/issues'

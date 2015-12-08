@@ -90,6 +90,7 @@ action :create do
   t = template "#{base}/etc/mongodb.conf" do
     source 'etc/mongodb.conf.erb'
 <<<<<<< HEAD:providers/instance.rb
+<<<<<<< HEAD:providers/instance.rb
     cookbook 'MongoDB'
     owner 'root'
     group 'root'
@@ -100,6 +101,9 @@ action :create do
     group "#{new_resource.group}"
 >>>>>>> fd9e26a... make user, group parameterized thru LWRP:providers/db.rb
 =======
+=======
+    cookbook 'mongo'
+>>>>>>> 1d4c01a... L7-mongo -> L7_mongo:providers/db.rb
     owner new_resource.user
     group new_resource.group
 >>>>>>> 141164b... updated foodcritic config, fixed FC offences:providers/db.rb
@@ -179,7 +183,11 @@ rm -f /tmp/mongodb-monitoring-status-#{new_resource.port}.tmp; fi"
 
   t = template "/etc/init.d/mongodb-#{new_resource.name}" do
     source 'etc/init.d/mongodb-init.erb'
+<<<<<<< HEAD:providers/instance.rb
     cookbook 'MongoDB'
+=======
+    cookbook 'mongo'
+>>>>>>> 1d4c01a... L7-mongo -> L7_mongo:providers/db.rb
     owner 'root'
     group 'root'
     mode '0755'
@@ -200,7 +208,11 @@ rm -f /tmp/mongodb-monitoring-status-#{new_resource.port}.tmp; fi"
 
   t = template "/etc/logrotate.d/mongodb-#{new_resource.name}-logs" do
     source 'etc/logrotate.d/mongodb-logs.erb'
+<<<<<<< HEAD:providers/instance.rb
     cookbook 'MongoDB'
+=======
+    cookbook 'mongo'
+>>>>>>> 1d4c01a... L7-mongo -> L7_mongo:providers/db.rb
     owner 'root'
     group 'root'
     mode '0644'

@@ -17,10 +17,17 @@ Please note that this cookbook does not use the 10gen apt repository, and instea
 
 ## Recipes
 
+<<<<<<< HEAD
 * `MongoDB` - The default no-op recipe.
 
 ## Providers
 * `mongodb_db` - Configures mongodb instance
+=======
+* `mongo` - The default no-op recipe.
+
+## Providers
+* `mongo_db` - Configures mongodb instance
+>>>>>>> 1d4c01a... L7-mongo -> L7_mongo
 
 ## Usage
 ###Provider parameters:
@@ -40,7 +47,11 @@ Please note that this cookbook does not use the 10gen apt repository, and instea
 
 #### A mongodb instance with custom parameters:
 ```ruby
+<<<<<<< HEAD
 mongodb_db 'example' do
+=======
+mongo_db 'example' do
+>>>>>>> 1d4c01a... L7-mongo -> L7_mongo
     port '27017'
     bind_ip '0.0.0.0'
     default_instance true
