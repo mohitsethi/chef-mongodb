@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 group :unit do
   gem 'chefspec'
@@ -17,6 +17,7 @@ group :development do
   gem 'rake'
   gem 'guard'
   gem 'guard-rake'
+  gem 'stove'
 end
 
 group :integration do

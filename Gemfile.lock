@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     CFPropertyList (2.3.2)
     addressable (2.3.8)
@@ -69,6 +69,9 @@ GEM
       serverspec (~> 2.7)
       specinfra (~> 2.10)
       syslog-logger (~> 1.6)
+    chef-api (0.5.0)
+      logify (~> 0.1)
+      mime-types
     chef-config (12.5.1)
       mixlib-config (~> 2.0)
       mixlib-shellout (~> 2.0)
@@ -255,6 +258,7 @@ GEM
     listen (3.0.5)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+    logify (0.2.0)
     lumberjack (1.0.9)
     method_source (0.8.2)
     mime-types (3.0)
@@ -383,6 +387,9 @@ GEM
       net-ssh (~> 2.7)
       net-telnet
       sfl
+    stove (3.2.8)
+      chef-api (~> 0.5)
+      logify (~> 0.2)
     syslog-logger (1.6.8)
     systemu (2.6.5)
     test-kitchen (1.4.2)
@@ -425,6 +432,7 @@ DEPENDENCIES
   rspec
   rubocop
   serverspec
+  stove
   test-kitchen
 
 BUNDLED WITH
